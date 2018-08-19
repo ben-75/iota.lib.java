@@ -78,9 +78,9 @@ public class IotaAPITest {
     public void shouldCreateIotaApiProxyInstanceWithDefaultValues() {
         iotaAPI = new IotaAPI.Builder().build();
         assertThat(iotaAPI, IsNull.notNullValue());
-        assertThat(iotaAPI.getHost(), Is.is("node.iotawallet.info"));
-        assertThat(iotaAPI.getPort(), Is.is("14265"));
-        assertThat(iotaAPI.getProtocol(), Is.is("http"));
+        assertThat(iotaAPI.getHost(), Is.is("nodes.testnet.iota.org"));
+        assertThat(iotaAPI.getPort(), Is.is("443"));
+        assertThat(iotaAPI.getProtocol(), Is.is("https"));
     }
 
     @Test
@@ -260,7 +260,6 @@ public class IotaAPITest {
         System.out.println(iotaAPI.broadcastAndStore(TEST_TRYTES));
     }
 
-    @Ignore
     @Test
     public void shouldSendTrytes() throws ArgumentException {
         iotaAPI.sendTrytes(new String[]{TEST_TRYTES}, DEPTH, MIN_WEIGHT_MAGNITUDE);
